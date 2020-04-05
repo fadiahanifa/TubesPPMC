@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 
-void tick(int row, int col, int* arr[row][col]){
+void tick(int row, int col, int arr[row][col]){
     int arr_nextgen[row][col];
     int i, j, m, n;
     for (i = 0; i < row; i++) {
@@ -19,11 +19,11 @@ void tick(int row, int col, int* arr[row][col]){
             int neighbor_alive = 0;
             for (m = -1; m <= 1; m++){
                 for (n = -1; n <= 1; n++){
-                    neighbor_alive += *arr[((i + m + row) % row)][((j + n + col) % col)];
+                    neighbor_alive += arr[((i + m + row) % row)][((j + n + col) % col)];
                 }
             }
-            neighbor_alive -= *arr[i][j];
-            if (*arr[i][j]) {
+            neighbor_alive -= arr[i][j];
+            if (arr[i][j]) {
                 if ((neighbor_alive >= 2) && (neighbor_alive < 4)){
                     arr_nextgen[i][j] = 1;
                 }
@@ -43,9 +43,15 @@ void tick(int row, int col, int* arr[row][col]){
     }
     for (i = 0; i < row; i++){
         for (j = 0; j < col; j++){
-            *arr[i][j] = arr_nextgen[i][j];
+            arr[i][j] = arr_nextgen[i][j];
         }
     }
     free(arr_nextgen);
     // fungsi print
+}
+
+void animate(int row, int col, int arr[row][col]){
+    for (int i = 0; i < 30; i++){
+        tick(row, col, arr);
+    }
 }
