@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 
-void tick(int row, int col, int arr[row][col]){
+void tick(int row, int col, int arr[][col]){
     int arr_nextgen[row][col];
     int i, j, m, n;
     for (i = 0; i < row; i++) {
@@ -50,7 +50,7 @@ void tick(int row, int col, int arr[row][col]){
     // fungsi print
 }
 
-void animate(int row, int col, int arr[row][col]){
+void animate(int row, int col, int arr[][col]){
     for (int i = 0; i < 30; i++){
         tick(row, col, arr);
     }
