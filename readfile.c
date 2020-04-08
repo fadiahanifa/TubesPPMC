@@ -1,5 +1,35 @@
+/*  EL2208 Praktikum Pemecahan Masalah dengan C
+ *  Kelompok            : 3
+ *  Hari dan Tanggal    : Rabu, 8 April 2020
+ *  Nama File           : readfile.c
+ *  Deskripsi           : Implementasi fungsi read file
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
+
+int main (int argc, char* argv[]) 
+    /*  argc : number of arguments passing the command line
+        argv : argument vector
+    */
+{
+    int rows = atoi(argv[1]);
+    if(rows <= 0)
+    {
+        printf("Baris harus > 0. Was %d\n", rows);
+        return -1;
+    }
+    rows += 2;      // (*)
+
+    int columns = atoi(argv[2]);
+    if(rows <= 0)
+    {
+        printf("Columns count must be greater than zero. Was %d\n", columns);
+        return -1;
+    }
+    columns += 2;   // (*)
+}
+
 
 double getRandomDoubleInRange(double min, double max)
 {
