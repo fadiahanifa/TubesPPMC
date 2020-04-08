@@ -28,7 +28,7 @@ Awal:
     scanf(" %s", &file_name);
     fptr=fopen(file_name,"r");
     while (fptr==NULL){
-        printf("Maaf file Anda kosong\n");
+        printf("Maaf file Anda kosong atau tidak ada!\n");
         printf("\nMasukkan file seed : ");
         scanf(" %s", &file_name);
         fptr=fopen(file_name,"r");
