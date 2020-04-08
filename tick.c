@@ -1,6 +1,6 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020 * MODUL 8 – TUGAS BESAR
 * Kelompok          : 3
-* Hari dan Tanggal  : Minggu, 5 April 2020
+* Hari dan Tanggal  : Senin, 6 April 2020
 * Asisten (NIM)     : Rahma Rizky Alifia (18316003)
 * Nama File         : tick.c
 * Deskripsi         : Implementasi fungsi tick
@@ -10,12 +10,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-void tick(int row, int col, int arr[row][col]){
+// Fungsi tick untuk melakukan iterasi
+// Referensi fungsi di dapat dari https://www.geeksforgeeks.org/program-for-conways-game-of-life/
+void tick(int row, int col, int arr[][col]){
+    // Deklarasi variabel
     int arr_nextgen[row][col];
     int i, j, m, n;
+
+    // Loop
     for (i = 0; i < row; i++) {
-        for (j = 1; j < col; j++){
+        for (j = 0; j < col; j++){
             int neighbor_alive = 0;
             for (m = -1; m <= 1; m++){
                 for (n = -1; n <= 1; n++){
@@ -46,12 +50,6 @@ void tick(int row, int col, int arr[row][col]){
             arr[i][j] = arr_nextgen[i][j];
         }
     }
-    free(arr_nextgen);
     // fungsi print
 }
 
-void animate(int row, int col, int arr[row][col]){
-    for (int i = 0; i < 30; i++){
-        tick(row, col, arr);
-    }
-}
