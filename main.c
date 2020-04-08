@@ -14,7 +14,7 @@
 void read_file();
 int main(){
 //KAMUS
-    int menu, out;
+    int menu, out=0;
     FILE* fptr;
     char file_name[50], yesno;
 //ALGORITMA
