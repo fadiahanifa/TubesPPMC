@@ -27,6 +27,12 @@ Awal:
     printf("\nMasukkan file seed : ");
     scanf(" %s", &file_name);
     fptr=fopen(file_name,"r");
+    while (fptr==NULL){
+        printf("Maaf file Anda kosong\n");
+        printf("\nMasukkan file seed : ");
+        scanf(" %s", &file_name);
+        fptr=fopen(file_name,"r");
+    }
     //read_file();
     do{
         printf("\n1. Animate");
