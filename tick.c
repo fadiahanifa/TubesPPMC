@@ -53,3 +53,11 @@ void tick(int row, int col, int arr[][col]){
     // fungsi print
 }
 
+<<<<<<< HEAD
+=======
+void animate(int row, int col, int arr[][col]){
+    for (int i = 0; i < 30; i++){
+        tick(row, col, arr);
+    }
+}
+>>>>>>> 8d6e41994ecd2c78a08ab5c441ae356d829809c6
