@@ -1,14 +1,14 @@
 /*  EL2208 Praktikum Pemecahan Masalah dengan C
  *  Kelompok            : 3
  *  Hari dan Tanggal    : Rabu, 8 April 2020
- *  Nama File           : readfile.c
+ *  Nama File           : read_file.c
  *  Deskripsi           : Implementasi fungsi read file
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int readfile(FILE file_name, ...)
+int read_file(FILE file_name, ...)
 {
     // KAMUS
     
@@ -37,7 +37,18 @@ int readfile(FILE file_name, ...)
     {
         for (int i = 0; i < row; i++)
         {
-            fscanf(file_name, "%s", arr[i][j]);     
+            while (!feof(file_name))
+            {
+                fscanf(file_name, "%s", arr[row][col]);
+                if (arr[row][col] == 'X')               // Konversi sel hidup -> int 1
+                {
+                    arr[row][col] = '1';
+                }
+                else if (arr[row][col] == '-')          // Konversi sel mati  -> int 0    
+                {
+                    arr[row][col] = '0';    
+                }
+            }     
         }
     }
 }
