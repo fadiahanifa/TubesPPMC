@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int read_file(FILE file_name, ...)
+int read_file(FILE file_name)
 {
     // KAMUS
     
@@ -29,8 +29,8 @@ int read_file(FILE file_name, ...)
     
     /*  Mulai dari baris ke-3 pada text (gen. 1 simulasi),
         tiap sel akan di-scan >> char -> int dengan ketentuan:
-        - Sel mati ('-') >> 0
-        - Sel hidup ('X') >> 0
+        - Sel hidup ('X') >> 1
+        - Sel mati  ('-') >> 0
     */
         
     for (int j = 0; j < col; j++)
