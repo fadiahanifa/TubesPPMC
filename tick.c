@@ -10,13 +10,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Fungsi untuk mencetak array
 void printarray(int row, int col, int arr[][100]){
+    // Deklarasi Variabel
     int i, j;
+    // Looping untuk mengecek tiap elemen
     for (i = 0; i < row; i++){
         for (j = 0; j < col; j++){
+            // Jika isi array 0 maka print "-" (sel mati)
             if (arr[i][j] == 0){
                 printf("-");
             }
+            // Jika isi array 1 maka print "X" (sel hidup)
             else if (arr[i][j] == 1){
                 printf("X");
             }
@@ -26,7 +31,7 @@ void printarray(int row, int col, int arr[][100]){
 }
 
 // Fungsi tick untuk melakukan iterasi
-// Referensi fungsi di dapat dari https://www.geeksforgeeks.org/program-for-conways-game-of-life/
+// Referensi fungsi didapat dari https://www.geeksforgeeks.org/program-for-conways-game-of-life/
 void tick(int row, int col, int arr[][100]){
     // Deklarasi variabel
     int arr_nextgen[row][col];
@@ -48,7 +53,7 @@ void tick(int row, int col, int arr[][100]){
             // Jika sel hidup -- arr[i][j] == 1
             if (arr[i][j]) {
                 // Jika tetangga hidup berada di antara 2 sampai 4, sel akan hidup
-                if ((neighbor_alive >= 2) && (neighbor_alive <= 4)){
+                if ((neighbor_alive >= 2) && (neighbor_alive < 4)){
                     arr_nextgen[i][j] = 1;
                 }
                 // Tetangga hidup dibawah 2 atau diatas 4, sel mati (underpopulation and overpopulation)

@@ -53,8 +53,8 @@ Awal:
                 break;
             case 3:
                 keluar:
-                printf("\nApakah Anda ingin memasukkan file seed baru (y/t)?");
-                yesno=getchar();
+                printf("\nApakah Anda ingin memasukkan file seed baru (y/t)? ");
+                scanf(" %c", &yesno);
                 printf("\n");
                 printf("\n");
                 if (yesno=='Y'||yesno=='y'){
@@ -72,7 +72,7 @@ Awal:
                 break;
             default :printf("\nInputan Anda salah!");
         }
-    }while(out!=1);
+    } while(out!=1);
     fclose(fptr);
 	return(0);
 }
