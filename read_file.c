@@ -13,6 +13,7 @@ int read_file(FILE file_name)
     // KAMUS
     
     int row, col;
+    char temp[i][j];
     
     // ALGORITMA
     
@@ -33,45 +34,22 @@ int read_file(FILE file_name)
         - Sel hidup ('X') >> 1
         - Sel mati  ('-') >> 0
     */
-        
+    
+    while (!feof(file_name))
+    {
     for (int j = 0; j < col; j++)
     {
         for (int i = 0; i < row; i++)
         {
-            while (file_name != '\0')
+            fgets(temp, 1, file_name);
+            if (temp[i][j] == 'X')               // Konversi sel hidup -> int 1
             {
-                fscanf(file_name, "%s", arr[row][col]);
-                if (arr[row][col] == 'X')               // Konversi sel hidup -> int 1
-                {
-                    arr[row][col] = '1';
-                }
-                else if (arr[row][col] == '-')          // Konversi sel mati  -> int 0    
-                {
-                    arr[row][col] = '0';    
-                }
+                arr[i][j] = 1;
+            }
+            else if (temp[i][j] == '-')          // Konversi sel mati  -> int 0    
+            {
+                arr[i][j] = 0;    
             }     
         }
     }
 }
-
-/* 
-
-char* checkAlive (int row, int col, int arr[row][col])
-{
-    for (int j = 0; j < col; j++)
-    {
-        for (int i = 0; i < row; i++)
-        {
-            if (arr[row][col] == 1)
-            {
-                arr[row][col] == 'X';
-            }
-            else if (arr[row][col] == 0)
-            {
-                arr[row][col] == '-';
-            }
-        }
-    }
-}
-
-*/
