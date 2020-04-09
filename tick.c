@@ -3,61 +3,79 @@
 * Hari dan Tanggal  : Senin, 6 April 2020
 * Asisten (NIM)     : Rahma Rizky Alifia (18316003)
 * Nama File         : tick.c
-* Deskripsi         : Implementasi fungsi tick
+* Deskripsi         : Implementasi fungsi tick dan printarray
 */
 
 
 #include <stdio.h>
 #include <stdlib.h>
 
+void printarray(int row, int col, int arr[][100]){
+    int i, j;
+    for (i = 0; i < row; i++){
+        for (j = 0; j < col; j++){
+            if (arr[i][j] == 0){
+                printf("-");
+            }
+            else if (arr[i][j] == 1){
+                printf("X");
+            }
+        }
+        printf("\n");
+    }
+}
+
 // Fungsi tick untuk melakukan iterasi
 // Referensi fungsi di dapat dari https://www.geeksforgeeks.org/program-for-conways-game-of-life/
-void tick(int row, int col, int arr[][col]){
+void tick(int row, int col, int arr[][100]){
     // Deklarasi variabel
     int arr_nextgen[row][col];
     int i, j, m, n;
 
-    // Loop
+    // Program Fungsi Tick
     for (i = 0; i < row; i++) {
         for (j = 0; j < col; j++){
+            // Mengecek jumlah tetangga hidup
             int neighbor_alive = 0;
             for (m = -1; m <= 1; m++){
                 for (n = -1; n <= 1; n++){
                     neighbor_alive += arr[((i + m + row) % row)][((j + n + col) % col)];
                 }
             }
+            // Mengurangi jumlah tetangga hidup dengan keadaan sel itu sendiri
             neighbor_alive -= arr[i][j];
+
+            // Jika sel hidup -- arr[i][j] == 1
             if (arr[i][j]) {
-                if ((neighbor_alive >= 2) && (neighbor_alive < 4)){
+                // Jika tetangga hidup berada di antara 2 sampai 4, sel akan hidup
+                if ((neighbor_alive >= 2) && (neighbor_alive <= 4)){
                     arr_nextgen[i][j] = 1;
                 }
+                // Tetangga hidup dibawah 2 atau diatas 4, sel mati (underpopulation and overpopulation)
                 else {
                     arr_nextgen[i][j] = 0;
                 }
             }
+            // Jika sel mati -- arr[i][j] == 0
             else {
+                // Jika tetangga hidup ada tiga maka sel akan hidup (reproduction)
                 if (neighbor_alive == 3){
                     arr_nextgen[i][j] = 1;
                 }
+                // Otherwise sel tidak berubah
                 else {
                     arr_nextgen[i][j] = 0;
                 }
             }
         }
     }
+    // Mengassign arr_nextgen pada arr
     for (i = 0; i < row; i++){
         for (j = 0; j < col; j++){
             arr[i][j] = arr_nextgen[i][j];
         }
     }
-    // fungsi print
+    // Print Array
+    printarray(row, col, arr);
 }
 
-<<<<<<< HEAD
-=======
-void animate(int row, int col, int arr[][col]){
-    for (int i = 0; i < 30; i++){
-        tick(row, col, arr);
-    }
-}
->>>>>>> 8d6e41994ecd2c78a08ab5c441ae356d829809c6
