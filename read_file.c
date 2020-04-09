@@ -37,19 +37,20 @@ int read_file(FILE file_name)
     
     while (!feof(file_name))
     {
-    for (int j = 0; j < col; j++)
-    {
-        for (int i = 0; i < row; i++)
+        for (int j = 0; j < col; j++)
         {
-            fgets(temp, 1, file_name);
-            if (temp[i][j] == 'X')               // Konversi sel hidup -> int 1
+            for (int i = 0; i < row; i++)
             {
-                arr[i][j] = 1;
+                fgets(temp, 1, file_name);
+                if (temp[i][j] == 'X')               // Konversi sel hidup -> int 1
+                {
+                    arr[i][j] = 1;
+                }
+                else if (temp[i][j] == '-')          // Konversi sel mati  -> int 0    
+                {
+                    arr[i][j] = 0;    
+                }     
             }
-            else if (temp[i][j] == '-')          // Konversi sel mati  -> int 0    
-            {
-                arr[i][j] = 0;    
-            }     
         }
     }
 }
