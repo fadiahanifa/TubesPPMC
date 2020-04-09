@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int read_file(FILE file_name)
+int read_file(FILE *file_name)
 {
     // KAMUS
     
