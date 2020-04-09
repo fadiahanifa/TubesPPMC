@@ -28,7 +28,8 @@ int read_file(FILE file_name)
     fscanf("%d\n%d\n", &row, &col);
     
     /*  Mulai dari baris ke-3 pada text (gen. 1 simulasi),
-        tiap sel akan di-scan >> char -> int dengan ketentuan:
+        tiap sel akan dibaca dengan mengubah tipe data 
+        >> char -> int dengan ketentuan:
         - Sel hidup ('X') >> 1
         - Sel mati  ('-') >> 0
     */
@@ -37,7 +38,7 @@ int read_file(FILE file_name)
     {
         for (int i = 0; i < row; i++)
         {
-            while (!feof(file_name))
+            while (file_name != '\0')
             {
                 fscanf(file_name, "%s", arr[row][col]);
                 if (arr[row][col] == 'X')               // Konversi sel hidup -> int 1
@@ -52,3 +53,25 @@ int read_file(FILE file_name)
         }
     }
 }
+
+/* 
+
+char* checkAlive (int row, int col, int arr[row][col])
+{
+    for (int j = 0; j < col; j++)
+    {
+        for (int i = 0; i < row; i++)
+        {
+            if (arr[row][col] == 1)
+            {
+                arr[row][col] == 'X';
+            }
+            else if (arr[row][col] == 0)
+            {
+                arr[row][col] == '-';
+            }
+        }
+    }
+}
+
+*/
