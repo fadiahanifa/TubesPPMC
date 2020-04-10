@@ -11,6 +11,7 @@
 #include <time.h>
 #include "tick.c"
 
+//Referensi fungsi https://www.geeksforgeeks.org/time-delay-c/
 void delay(float lama){
     clock_t t=clock();
     while (clock()<=t+lama);
