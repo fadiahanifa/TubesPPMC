@@ -12,6 +12,7 @@
 #include <time.h>
 #include "tick.c"
 #include "read_file.c"
+#include "animate.c"
 
 int main(){
 //KAMUS
@@ -74,7 +75,7 @@ Awal:
         }
     } while(out!=1);
     fclose(fptr);
-	return(0);
+return(0);
 }
 
 
