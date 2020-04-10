@@ -44,7 +44,7 @@ Awal:
         printf("\n2. Tick");
         printf("\n3. Quit");
         printf("\nMasukkan pilihan (1-3) : ");
-        scanf("%d", &menu);
+        scanf(" %d", &menu);
         switch(menu){
             case 1:
                 //animate(int row, int col, int arr[][col]);
