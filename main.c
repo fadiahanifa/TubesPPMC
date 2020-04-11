@@ -47,7 +47,7 @@ Awal:
         scanf(" %d", &menu);
         switch(menu){
             case 1:
-                //animate(int row, int col, int arr[][col]);
+                animate(row, col, arr);
                 break;
             case 2:
                 tick(row, col, arr);

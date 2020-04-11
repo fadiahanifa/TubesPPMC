@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "tick.c"
 
 //Referensi fungsi https://www.geeksforgeeks.org/time-delay-c/
 void delay(float lama){
@@ -20,10 +19,9 @@ void delay(float lama){
 void animate(int row, int col, int arr[][100]){
     int itr,i;
     printf("Masukkan jumlah iterasi yang diinginkan : ");
-    scanf("%d",itr);
+    scanf(" %d", &itr);
     for (i=0;i<itr;i++){
         tick(row, col, arr);
-        printarray(row, col, arr);
         delay(250);
     }
 }
