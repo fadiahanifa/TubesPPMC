@@ -21,7 +21,8 @@ void animate(int row, int col, int arr[][100]){
     printf("Masukkan jumlah iterasi yang diinginkan : ");
     scanf(" %d", &itr);
     for (i=0;i<itr;i++){
+        system("clear");
         tick(row, col, arr);
-        delay(250);
+        delay(500);
     }
 }
