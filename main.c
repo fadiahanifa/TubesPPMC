@@ -24,7 +24,14 @@ int main(){
 //ALGORITMA
 Awal:
     printf("CONWAY'S GAME OF LIFE\n");
-    printf("Keterangan game:\n");
+    printf("\nKeterangan game:\n");
+    printf("Game ini merupakan permainan yang dikembangkan John Horton Conway pada 1970.\n");
+    printf("Merupakan automaton untuk mensimulasikan perkembangan suatu populasi berdasarkan ketentuan tertentu.\n");
+    printf("\nKeterangan menu:\n");
+    printf("-Tick       -> melihat satu perubahan kondisi (satu iterasi).\n");
+    printf("-Animate    -> melihat beberapa perubahan sesuai nilai input yang diberikan (n iterasi).\n");
+    printf("-Quit       -> keluar dari program atau bila ingin mengganti file seed.\n");
+    printf("\nSelamat menikmati :)\n");
     printf("\nMenu:");
     printf("\nMasukkan file seed : ");
     scanf(" %s", file_name);
