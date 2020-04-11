@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
 
 //Referensi fungsi https://www.geeksforgeeks.org/time-delay-c/
 void delay(float lama){
