@@ -23,6 +23,6 @@ void animate(int row, int col, int arr[][100]){
     for (i=0;i<itr;i++){
         system("clear");
         tick(row, col, arr);
-        delay(500);
+        delay(1000);
     }
 }
