@@ -68,7 +68,6 @@ Awal:
                 if (yesno=='Y'||yesno=='y'){
                     fclose(fptr);
                     goto Awal;
-                    printarray(row, col, arr);
                 }
                 else if (yesno=='T'||yesno=='t'){
                     out=1;
