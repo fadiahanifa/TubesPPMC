@@ -1,6 +1,6 @@
 /* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020 * MODUL 8 – TUGAS BESAR
 * Kelompok          : 3
-* Hari dan Tanggal  : Senin, 8 April 2020
+* Hari dan Tanggal  : Sabtu, 11 April 2020
 * Asisten (NIM)     : Rahma Rizky Alifia (18316003)
 * Nama File         : animate.c
 * Deskripsi         : Implementasi fungsi tick dan printarray
