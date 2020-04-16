@@ -23,6 +23,11 @@ void animate(int row, int col, int arr[][100]){
     int itr,i;
     printf("Masukkan jumlah iterasi yang diinginkan : ");
     scanf(" %d", &itr);
+    while (itr<0){
+        printf("Maaf input Anda salah!\n");
+        printf("Masukkan jumlah iterasi yang diinginkan : ");
+        scanf(" %d", &itr);
+    }
     for (i=0;i<itr;i++){
         //system("clear");//untuk mac
         system("cls");//untuk windows
